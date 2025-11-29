@@ -1,0 +1,27 @@
+name: Deploy Blog to GitHub Pages
+
+on:
+  repository_dispatch:
+    types: [deploy-blog]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./out
+      - uses: actions/deploy-pages@v2
