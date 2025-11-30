@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Header } from "./components/Header";
 import { getPosts } from "./lib/posts";
 import { PostList } from "./components/PostList";
@@ -25,7 +26,9 @@ export default function Home() {
             .
           </p>
         ) : (
-          <PostList posts={posts} />
+          <Suspense fallback={null}>
+            <PostList posts={posts} />
+          </Suspense>
         )}
       </main>
     </div>
