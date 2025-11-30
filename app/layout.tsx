@@ -22,6 +22,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  other: {
+    "yandex-verification": "cb2af276fd97f2fb",
+    "google-site-verification":
+      "RH9nzv4dsH7SLkqvJBK_nPNrj84QOCsKd2zp-wumHws",
+  },
   openGraph: {
     title: `${blogConfig.name} — ${blogConfig.tagline}`,
     description: blogConfig.aboutMe,
