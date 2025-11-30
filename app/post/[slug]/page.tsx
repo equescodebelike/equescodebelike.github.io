@@ -85,7 +85,7 @@ export default async function PostPage({ params }: PageProps) {
     "@type": "BlogPosting",
     headline: title,
     datePublished: post!.dateFormatted,
-    mainEntityOfPage: `${siteUrl}/post/${params.slug}`,
+    mainEntityOfPage: `${siteUrl}/post/${slug}`,
     image: post!.media ? [`${siteUrl}${post!.media}`] : undefined,
     author: {
       "@type": "Person",
