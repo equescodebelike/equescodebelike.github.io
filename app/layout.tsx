@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://equescodebelike.github.io/core";
+const siteUrl = "https://equescodebelike.github.io";
 
 export const metadata: Metadata = {
   title: `${blogConfig.name} — ${blogConfig.tagline}`,

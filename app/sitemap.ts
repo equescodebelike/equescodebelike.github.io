@@ -5,7 +5,7 @@ import { createSlug } from "./lib/slug";
 export const dynamic = "force-static";
 export const revalidate = false;
 
-const siteUrl = "https://equescodebelike.github.io/core";
+const siteUrl = "https://equescodebelike.github.io";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getPosts();

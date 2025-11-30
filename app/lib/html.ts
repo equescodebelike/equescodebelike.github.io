@@ -7,7 +7,7 @@ export function normalizePostHtml(html: string): string {
   // <a href="" onclick="return ShowHashtag(&quot;ru&quot;)">#ru</a>
   result = result.replace(
     /<a href="" onclick="return ShowHashtag\(&quot;([^"]+)&quot;\)">/g,
-    (_match, tag) => `<a href="/?tag=${encodeURIComponent(tag)}">`,
+    (_match, tag) => `<a href="?tag=${encodeURIComponent(tag)}">`,
   );
 
   // На всякий случай убираем оставшиеся inline onclick, чтобы не было мусора

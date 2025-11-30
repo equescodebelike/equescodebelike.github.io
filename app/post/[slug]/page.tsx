@@ -5,7 +5,7 @@ import { getPosts } from "../../lib/posts";
 import { createSlug, extractIdFromSlug, getPostTitle } from "../../lib/slug";
 import { normalizePostHtml, extractPlainText } from "../../lib/html";
 
-const siteUrl = "https://equescodebelike.github.io/core";
+const siteUrl = "https://equescodebelike.github.io";
 
 export const dynamicParams = false;
 

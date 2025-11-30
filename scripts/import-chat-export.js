@@ -87,9 +87,8 @@ function buildImageHtml(imageHrefs) {
   const imgs = imageHrefs
     .map((href) => {
       const fileName = path.basename(href);
-      // Для GitHub Pages проект находится под /core,
-      // поэтому используем абсолютный путь с /core.
-      const src = `/core/telegram/photos/${fileName}`;
+      // Сайт теперь в корне GitHub Pages, достаточно /telegram/photos/...
+      const src = `/telegram/photos/${fileName}`;
       return `<img src="${src}" alt="" class="mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto" />`;
     })
     .join("");
@@ -152,7 +151,7 @@ function main() {
       text: combinedHtml,
       mediaType: imageHrefs.length ? "photo" : null,
       media: imageHrefs.length
-        ? `/core/telegram/photos/${path.basename(imageHrefs[0])}`
+        ? `/telegram/photos/${path.basename(imageHrefs[0])}`
         : null,
     });
   }
