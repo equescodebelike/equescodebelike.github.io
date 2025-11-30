@@ -1,6 +1,6 @@
 import { Header } from "./components/Header";
-import { PostCard } from "./components/PostCard";
 import { getPosts } from "./lib/posts";
+import { PostList } from "./components/PostList";
 
 export default function Home() {
   const posts = getPosts();
@@ -25,11 +25,7 @@ export default function Home() {
             .
           </p>
         ) : (
-          <section className="flex flex-col gap-4">
-            {posts.map((post) => (
-              <PostCard key={post.id} post={post} />
-            ))}
-          </section>
+          <PostList posts={posts} />
         )}
       </main>
     </div>
