@@ -10,7 +10,6 @@ export function normalizePostHtml(html: string): string {
     (_match, tag) => `<a href="?tag=${encodeURIComponent(tag)}">`,
   );
 
-  // На всякий случай убираем оставшиеся inline onclick, чтобы не было мусора
   result = result.replace(/\sonclick="[^"]*"/g, "");
 
   return result;
@@ -29,7 +28,12 @@ export function buildPreviewHtml(html: string): string {
     return withoutImgs;
   }
 
-  return `${firstImgTag}<br/>${withoutImgs}`;
+  const compactImgTag = firstImgTag.replace(
+    /class="[^"]*"/,
+    'class="mb-2 rounded-lg border border-black/5 dark:border-white/10 max-w-xs h-auto mx-auto block"'
+  );
+
+  return `${compactImgTag}<br/>${withoutImgs}`;
 }
 
 export function extractPlainText(html: string): string {

@@ -22,7 +22,7 @@ export function PostCard({ post }: PostCardProps) {
   const html = buildPreviewHtml(fullHtml);
 
   return (
-    <article className="rounded-2xl border border-black/5 bg-white/80 p-5 shadow-sm shadow-black/5 backdrop-blur dark:border-white/10 dark:bg-neutral-950/60 dark:shadow-black/40">
+    <article className="mx-auto rounded-xl border border-black/5 bg-white/80 p-4 shadow-sm shadow-black/5 backdrop-blur dark:border-white/10 dark:bg-neutral-950/60 dark:shadow-black/40 max-w-3xl">
       <time className="text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
         {formatDate(post.dateFormatted)}
       </time>
