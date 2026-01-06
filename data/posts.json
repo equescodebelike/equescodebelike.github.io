@@ -1,5 +1,29 @@
 [
   {
+    "id": 85,
+    "date": 1765917363,
+    "dateFormatted": "2025-12-16T20:36:03.000Z",
+    "text": "Через флаворы можно передавать hostName, например:<br><br>    <br><pre>productFlavors {<br>        create(&quot;production&quot;) {<br>            dimension = &quot;app&quot;<br>            manifestPlaceholders[&quot;hostName&quot;] = &quot;example.ru&quot;<br>            resValue(&quot;string&quot;, &quot;app_name&quot;, &quot;Example&quot;)<br>        }<br>        create(&quot;staging&quot;) {<br>            dimension = &quot;app&quot;<br>            applicationIdSuffix = &quot;.staging&quot;<br>            manifestPlaceholders[&quot;hostName&quot;] = &quot;stg.example.ru&quot;<br>            resValue(&quot;string&quot;, &quot;app_name&quot;, &quot;Example Staging&quot;)<br>        }<br>    }</pre><br><br>Потом в main манифесте:<br><br><pre>&lt;intent-filter android:autoVerify=&quot;true&quot;&gt;<br>                &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;<br>                &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;<br>                &lt;category android:name=&quot;android.intent.category.BROWSABLE&quot; /&gt;<br>                &lt;data android:host=&quot;${hostName}&quot; android:scheme=&quot;https&quot; /&gt;<br>            &lt;/intent-filter&gt;</pre><br><br>Используйте, когда вам нужно разграничить интенты под прод и стейдж, очень удобно",
+    "mediaType": null,
+    "media": null
+  },
+  {
+    "id": 79,
+    "date": 1765612350,
+    "dateFormatted": "2025-12-13T07:52:30.000Z",
+    "text": "<img src=\"/telegram/photos/photo_42@13-12-2025_10-52-30.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_43@13-12-2025_10-52-30.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_44@13-12-2025_10-52-30.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_45@13-12-2025_10-52-30.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_46@13-12-2025_10-52-30.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_47@13-12-2025_10-52-30.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/><strong>Бро, ты справишься с годовыми отчётами и тд</strong><br><br>Если будешь заботиться о себе в самый горящий период года. Мы собрали для тебя несколько простых техник, которые помогут собраться с силами и возобновить ресурс. <br><br>Попробуй сделать их прямо на рабочем месте и поделись постом с друзьями, чтобы они тоже словили дзен в декабрьской суете.<br><br><a href=\"\" onclick=\"return ShowHashtag(&quot;советы@careeratMars&quot;)\">#советы@careeratMars</a>",
+    "mediaType": "photo",
+    "media": "/telegram/photos/photo_42@13-12-2025_10-52-30.jpg"
+  },
+  {
+    "id": 78,
+    "date": 1764533901,
+    "dateFormatted": "2025-11-30T20:18:21.000Z",
+    "text": "<img src=\"/telegram/photos/photo_41@30-11-2025_23-18-21.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/>Навайбил на н8н за один вечер себе <a href=\"https://equescodebelike.github.io/\">блог</a><br><br>Автопарсинг новостей с телеги, next js, github pages<br><br>Посмотрим как будет работать. Конечно выглядит как магия, еще и комьюнити версию можно себе поставить на контейнере 👀",
+    "mediaType": "photo",
+    "media": "/telegram/photos/photo_41@30-11-2025_23-18-21.jpg"
+  },
+  {
     "id": 70,
     "date": 1764096661,
     "dateFormatted": "2025-11-25T18:51:01.000Z",
