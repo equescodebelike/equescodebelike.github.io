@@ -1,14 +1,12 @@
 [
-  [
-    {
-      "id": 90,
-      "date": 1770406745,
-      "dateFormatted": "2026-02-06T19:39:05.000Z",
-      "text": "<img src=\"/telegram/photos/photo_49@06-02-2026_22-39-05.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/><a href=\"\" onclick=\"return ShowHashtag(&quot;flutter&quot;)\">#flutter</a> <a href=\"\" onclick=\"return ShowHashtag(&quot;test&quot;)\">#test</a><br><br><strong>Alchemist Guide</strong> (part 1)<br><br>Перед прочтением поста рекомендую <a href=\"https://habr.com/ru/companies/yandex/articles/952090/\">статью</a> от Яндекса по голденам (скриншот тестам), чтобы быть в контексте и понимать что к чему. Я лишь отмечу моменты, которые пригодились мне при настройке ci и шрифтов для платформенных тестов<br><br>По умолчанию библиотека не предоставляет возможность выбрать пороговое значение прохождения теста при различиях локально сгенерированных голденов и из ci:<br><br> <br><pre>flutter test --update-goldens</pre><br><br><pre> flutter test --tags golden </pre><br><br>Даже создан <a href=\"https://github.com/Betterment/alchemist/issues/90\">ишак</a>, который тянется уже несколько лет, где предлагают добавить значение tolerance. Которое в процентах выражает разницу в пикселях исходного изображения от пайплайна. Рекомендую оставлять где-то на 5 процентах и фиксировать размеры виджетов непосредственно в голденах. Одно дело расположение элементов или рендер на скрине, что не превышает 5 процентов и ничего в этом нет криминального. А другое разница размера изображений хотя бы на 1 пиксель по ширине или высоте. Тест упадет при любом tolerance",
-      "mediaType": "photo",
-      "media": "/telegram/photos/photo_49@06-02-2026_22-39-05.jpg"
-    }
-  ],
+  {
+    "id": 90,
+    "date": 1770406745,
+    "dateFormatted": "2026-02-06T19:39:05.000Z",
+    "text": "<img src=\"/telegram/photos/photo_49@06-02-2026_22-39-05.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/><a href=\"\" onclick=\"return ShowHashtag(&quot;flutter&quot;)\">#flutter</a> <a href=\"\" onclick=\"return ShowHashtag(&quot;test&quot;)\">#test</a><br><br><strong>Alchemist Guide</strong> (part 1)<br><br>Перед прочтением поста рекомендую <a href=\"https://habr.com/ru/companies/yandex/articles/952090/\">статью</a> от Яндекса по голденам (скриншот тестам), чтобы быть в контексте и понимать что к чему. Я лишь отмечу моменты, которые пригодились мне при настройке ci и шрифтов для платформенных тестов<br><br>По умолчанию библиотека не предоставляет возможность выбрать пороговое значение прохождения теста при различиях локально сгенерированных голденов и из ci:<br><br> <br><pre>flutter test --update-goldens</pre><br><br><pre> flutter test --tags golden </pre><br><br>Даже создан <a href=\"https://github.com/Betterment/alchemist/issues/90\">ишак</a>, который тянется уже несколько лет, где предлагают добавить значение tolerance. Которое в процентах выражает разницу в пикселях исходного изображения от пайплайна. Рекомендую оставлять где-то на 5 процентах и фиксировать размеры виджетов непосредственно в голденах. Одно дело расположение элементов или рендер на скрине, что не превышает 5 процентов и ничего в этом нет криминального. А другое разница размера изображений хотя бы на 1 пиксель по ширине или высоте. Тест упадет при любом tolerance",
+    "mediaType": "photo",
+    "media": "/telegram/photos/photo_49@06-02-2026_22-39-05.jpg"
+  },
   {
     "id": 85,
     "date": 1765917363,
