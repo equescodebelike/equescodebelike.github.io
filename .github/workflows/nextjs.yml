@@ -28,10 +28,10 @@ jobs:
           node-version: '20'
       - name: Install dependencies
         run: npm ci
-      - name: Fetch Telegram posts
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        run: node scripts/fetch-telegram.js
+      # - name: Fetch Telegram posts
+      #   env:
+      #     TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      #   run: node scripts/fetch-telegram.js
       - name: Build blog
         run: npm run build
       - name: Upload Pages artifact
