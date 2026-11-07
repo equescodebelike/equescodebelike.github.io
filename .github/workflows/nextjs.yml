@@ -7,7 +7,8 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: "0 3 * * *"
+    # Bot API хранит апдейты только 24 часа, поэтому проверяем ежечасно
+    - cron: "0 * * * *"
 
 permissions:
   contents: write

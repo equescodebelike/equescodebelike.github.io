@@ -232,6 +232,39 @@ function buildImageHtml(paths) {
   );
 }
 
+function getSkipReason(message) {
+  // Репосты (forward из другого канала/чата)
+  if (
+    message.forward_origin ||
+    message.forward_from ||
+    message.forward_from_chat ||
+    message.forward_sender_name ||
+    message.forward_date
+  ) {
+    return "repost";
+  }
+
+  // Голосования и викторины
+  if (message.poll) {
+    return "poll";
+  }
+
+  // Видео, кружки и GIF-анимации
+  if (message.video || message.video_note || message.animation) {
+    return "video";
+  }
+
+  if (
+    message.document &&
+    typeof message.document.mime_type === "string" &&
+    message.document.mime_type.startsWith("video/")
+  ) {
+    return "video";
+  }
+
+  return null;
+}
+
 function pickMedia(message) {
   if (Array.isArray(message.photo) && message.photo.length > 0) {
     return { type: "photo", item: message.photo[message.photo.length - 1] };
@@ -308,6 +341,7 @@ async function main() {
   const updates = await fetchUpdates();
 
   const channelMessages = [];
+  const skipped = { repost: 0, poll: 0, video: 0 };
 
   for (const update of updates) {
     const message =
@@ -324,10 +358,19 @@ async function main() {
       continue;
     }
 
+    const skipReason = getSkipReason(message);
+    if (skipReason) {
+      skipped[skipReason] += 1;
+      continue;
+    }
+
     channelMessages.push(message);
   }
 
   console.log(`Matched ${channelMessages.length} channel post(s)`);
+  console.log(
+    `Skipped: ${skipped.repost} repost(s), ${skipped.poll} poll(s), ${skipped.video} video post(s)`,
+  );
 
   const mapped = [];
   for (const message of channelMessages) {

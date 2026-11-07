@@ -15,7 +15,8 @@
       пока не дойдёт до постов, которые уже есть в data/posts.json.
     - Скачивает фото в public/telegram/photos/*.
     - Добавляет только отсутствующие посты (существующие не перезаписывает).
-    - Для видео сохраняет превью и ссылку на пост в Telegram.
+    - Пропускает видео, репосты (forward), голосования и служебные сообщения.
+      Если такие посты уже есть в data/posts.json — удаляет их.
 
   Ограничения:
     - Работает только для публичных каналов.
@@ -120,7 +121,11 @@ function parseMessage(block) {
     /<i class="tgme_widget_message_(?:video|roundvideo)_thumb"[^>]*style="[^"]*background-image:url\('([^']+)'\)/,
   );
   const thumbUrl = thumbMatch ? thumbMatch[1] : null;
-  const hasVideo = /<video\b/.test(block);
+  const hasVideo =
+    /<video\b/.test(block) ||
+    block.includes("tgme_widget_message_video") ||
+    block.includes("tgme_widget_message_roundvideo");
+  const isService = block.includes("service_message");
 
   const pollQuestion = block.match(
     /<div class="tgme_widget_message_poll_question[^"]*"[^>]*>([\s\S]*?)<\/div>/,
@@ -134,6 +139,7 @@ function parseMessage(block) {
   const forwardedMatch = block.match(
     /tgme_widget_message_forwarded_from_name" href="([^"]+)"[^>]*><span[^>]*>([\s\S]*?)<\/span>/,
   );
+  const isForwarded = /tgme_widget_message_forwarded_from/.test(block);
 
   return {
     id,
@@ -142,6 +148,9 @@ function parseMessage(block) {
     imageUrls,
     thumbUrl,
     hasVideo,
+    isService,
+    isForwarded,
+    isPoll: Boolean(pollQuestion && pollOptions.length),
     poll:
       pollQuestion && pollOptions.length
         ? { question: stripTags(pollQuestion[1]), options: pollOptions }
@@ -213,22 +222,6 @@ async function buildPost(message) {
 
   let text = message.text;
 
-  if (message.poll) {
-    const options = message.poll.options
-      .map((option) => `• ${option}`)
-      .join("<br/>");
-    text = `<b>${message.poll.question}</b><br/>${options}${text ? `<br/><br/>${text}` : ""}`;
-  }
-
-  if (message.forwardedFrom && !text) {
-    text = `<i>Forwarded from <a href="${message.forwardedFrom.url}">${message.forwardedFrom.name}</a></i>`;
-  }
-
-  if (message.hasVideo) {
-    const link = `<a href="https://t.me/${CHANNEL_USERNAME}/${id}">▶ Смотреть видео в Telegram</a>`;
-    text = text ? `${text}<br/><br/>${link}` : link;
-  }
-
   if (!text && !images.length) {
     text = `<a href="https://t.me/${CHANNEL_USERNAME}/${id}">Открыть пост в Telegram</a>`;
   }
@@ -260,6 +253,7 @@ async function main() {
   );
 
   const seenIds = new Set();
+  const seenImageUrls = new Set();
   const scraped = [];
   let url = BASE_URL;
 
@@ -275,6 +269,15 @@ async function main() {
 
     for (const message of fresh) {
       seenIds.add(message.id);
+      // В веб-превью элементы медиа-группы идут отдельными сообщениями и
+      // могут повторять картинку предыдущего поста. Такие дубли пропускаем.
+      message.isDuplicateMedia =
+        !message.text &&
+        message.imageUrls.length > 0 &&
+        message.imageUrls.every((imageUrl) => seenImageUrls.has(imageUrl));
+      for (const imageUrl of message.imageUrls) {
+        seenImageUrls.add(imageUrl);
+      }
       scraped.push(message);
     }
 
@@ -285,14 +288,44 @@ async function main() {
     url = `${BASE_URL}?before=${minId}`;
   }
 
-  const missing = scraped
-    .filter((message) => !byId.has(message.id))
-    .sort((a, b) => a.id - b.id);
+  // Посты с видео, репосты, голосования и служебные сообщения не импортируем.
+  const isExcluded = (message) =>
+    message.hasVideo ||
+    message.isPoll ||
+    message.isForwarded ||
+    message.isService ||
+    message.isDuplicateMedia;
 
-  console.log(`Scraped ${scraped.length} message(s), missing: ${missing.length}`);
+  // Заодно вычищаем такие посты, если они уже успели попасть в posts.json
+  // (в пределах просмотренных страниц).
+  let removed = 0;
+  for (const message of scraped) {
+    if (isExcluded(message) && byId.has(message.id)) {
+      byId.delete(message.id);
+      removed += 1;
+      console.log(`Removed excluded post #${message.id}`);
+    }
+  }
+
+  const missing = scraped.filter((message) => !byId.has(message.id));
+  const excluded = missing.filter(isExcluded);
+  const allowed = missing.filter((message) => !isExcluded(message)).sort(
+    (a, b) => a.id - b.id,
+  );
+
+  console.log(
+    `Scraped ${scraped.length} message(s), missing: ${missing.length}, ` +
+      `excluded: ${excluded.length}, to add: ${allowed.length}`,
+  );
+
+  if (excluded.length) {
+    console.log(
+      `Skipped ids: ${excluded.map((message) => message.id).join(", ")}`,
+    );
+  }
 
   let added = 0;
-  for (const message of missing) {
+  for (const message of allowed) {
     const post = await buildPost(message);
     byId.set(post.id, post);
     added += 1;
@@ -304,7 +337,9 @@ async function main() {
   ensureDir(path.dirname(POSTS_PATH));
   fs.writeFileSync(POSTS_PATH, JSON.stringify(posts, null, 2), "utf8");
 
-  console.log(`Done. Added ${added} post(s), total ${posts.length}.`);
+  console.log(
+    `Done. Added ${added} post(s), removed ${removed} excluded post(s), total ${posts.length}.`,
+  );
 }
 
 main().catch((error) => {

@@ -24,52 +24,12 @@
     "media": "/telegram/photos/tg_113_0.jpg"
   },
   {
-    "id": 111,
-    "date": 1782848975,
-    "dateFormatted": "2026-06-30T19:49:35.000Z",
-    "text": "<img src=\"/telegram/photos/tg_111_thumb.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/><a href=\"https://t.me/lemobilecore/111\">▶ Смотреть видео в Telegram</a>",
-    "mediaType": "photo",
-    "media": "/telegram/photos/tg_111_thumb.jpg"
-  },
-  {
     "id": 110,
     "date": 1780847775,
     "dateFormatted": "2026-06-07T15:56:15.000Z",
     "text": "<img src=\"/telegram/photos/tg_110_0.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/>",
     "mediaType": "photo",
     "media": "/telegram/photos/tg_110_0.jpg"
-  },
-  {
-    "id": 108,
-    "date": 1780839274,
-    "dateFormatted": "2026-06-07T13:34:34.000Z",
-    "text": "<img src=\"/telegram/photos/tg_108_0.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/tg_108_1.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/><div class=\"tgme_widget_message_text js-message_text\" dir=\"auto\">Выступил.<br/><br/>Спасибо всем кто пришел. <br/><br/>Особенно спасибо <a href=\"https://t.me/Alexander_Bulychev\" target=\"_blank\">@Alexander_Bulychev</a> за подаренную крутую книгу. Почувствовал себя целебой…",
-    "mediaType": "photo",
-    "media": "/telegram/photos/tg_108_0.jpg"
-  },
-  {
-    "id": 107,
-    "date": 1780828915,
-    "dateFormatted": "2026-06-07T10:41:55.000Z",
-    "text": "<img src=\"/telegram/photos/tg_107_thumb.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/><a href=\"https://t.me/lemobilecore/107\">▶ Смотреть видео в Telegram</a>",
-    "mediaType": "photo",
-    "media": "/telegram/photos/tg_107_thumb.jpg"
-  },
-  {
-    "id": 106,
-    "date": 1780322451,
-    "dateFormatted": "2026-06-01T14:00:51.000Z",
-    "text": "<img src=\"/telegram/photos/tg_106_0.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/><i>Forwarded from <a href=\"https://t.me/boltology_tech/1006\">Boltology Tech | Nikita Sinyavin</a></i>",
-    "mediaType": "photo",
-    "media": "/telegram/photos/tg_106_0.jpg"
-  },
-  {
-    "id": 105,
-    "date": 1780221881,
-    "dateFormatted": "2026-05-31T10:04:41.000Z",
-    "text": "<img src=\"/telegram/photos/tg_105_thumb.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/>",
-    "mediaType": "photo",
-    "media": "/telegram/photos/tg_105_thumb.jpg"
   },
   {
     "id": 104,
@@ -112,14 +72,6 @@
     "media": null
   },
   {
-    "id": 98,
-    "date": 1773775058,
-    "dateFormatted": "2026-03-17T19:17:38.000Z",
-    "text": "<b>На вас работает &quot;Пик Балмера&quot;?</b><br/>• Да<br/>• Нет<br/>• Нужно что то покрепче",
-    "mediaType": null,
-    "media": null
-  },
-  {
     "id": 97,
     "date": 1773775010,
     "dateFormatted": "2026-03-17T19:16:50.000Z",
@@ -142,14 +94,6 @@
     "text": "<a href=\"https://set.ki/post/cmkvMvb\" target=\"_blank\" rel=\"noopener\">https://set.ki/post/cmkvMvb</a><br/><br/>Краткая выжимка про сервис воркеры, хороший пост",
     "mediaType": null,
     "media": null
-  },
-  {
-    "id": 93,
-    "date": 1770799472,
-    "dateFormatted": "2026-02-11T08:44:32.000Z",
-    "text": "<img src=\"/telegram/photos/tg_93_0.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/>Сварщики возглавили <b>топ самых высокооплачиваемых </b>профессий на начало 2026 года — <a href=\"https://ria.ru/20260211/professiya-2073550382.html\" target=\"_blank\" rel=\"noopener\" onclick=\"return confirm('Open this link?\\n\\n'+this.href);\">пишет</a> РИА новости. <br/><br/>Только дышите, но медиана их зарплат — 267 тысяч рублей в месяц. Также в топе дата-сайентисты с зп в  250 тысяч рублей и DevOps-инженеры, которые получают 216 тысяч рублей. <br/><br/>Программисты, что с лицом?<tg-emoji emoji-id=\"6327773410231322974\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09FA5B2.png')\"><b>🥲</b></i></tg-emoji><br/><br/><a href=\"https://t.me/xor_journal\" target=\"_blank\">@xor_journal</a>",
-    "mediaType": "photo",
-    "media": "/telegram/photos/tg_93_0.jpg"
   },
   {
     "id": 91,
@@ -176,36 +120,12 @@
     "media": null
   },
   {
-    "id": 87,
-    "date": 1766689489,
-    "dateFormatted": "2025-12-25T19:04:49.000Z",
-    "text": "<b>Вы пишите голден (скриншот) тесты?</b><br/>• Да<br/>• Только юнит, интеграционные, виджет тесты<br/>• Я не пишу тесты",
-    "mediaType": null,
-    "media": null
-  },
-  {
-    "id": 86,
-    "date": 1766391007,
-    "dateFormatted": "2025-12-22T08:10:07.000Z",
-    "text": "<img src=\"/telegram/photos/tg_86_0.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/>Hola, Amigos&#33; На связи Павел Гершевич, Mobile Team Lead в Amiga. При настройке диплинков в наше приложение иногда требуется сделать так, чтобы только определенные ссылки вели в приложение и наоборот. В этой небольшой серии постов мы разберем, как поступать в таких ситуациях.<br/><br/>Начнем со случаев, когда переход должен быть только по определенным путям.<br/><br/>Как и для любых других диплинков, настройка будет внутри проекта для Android и в файле <code>apple-app-site-association</code> для iOS.<br/><br/>Для Android нужно открыть файл <code>AndroidManifest.xml</code> вашего проекта и там добавить код (или изменить его, если вы уже настраивали диплинки до этого):<br/><br/><pre>&lt;intent-filter android:autoVerify=”true” tools:targetApi=”m”&gt;<br/>  &lt;action android:name=”android.intent.action.VIEW” /&gt;<br/>  &lt;category android:name=”android.intent.category.DEFAULT /&gt;<br/>  &lt;category android:name=”android.intent.category.BROWSABLE /&gt;<br/><br/>  &lt;data<br/>    android:scheme=”https”<br/>    android:host=”example.com”<br/>    android:pathPrefix=”/sample”<br/>  /&gt;<br/>&lt;/intent-filter&gt;<br/></pre><br/><br/>Такой код позволит нам открывать только страницы, чей URL начинается с <a href=\"https://example.com/sample\" target=\"_blank\" rel=\"noopener\">https://example.com/sample</a>.<br/><br/>Используйте <code>path</code>, чтобы указать только 1 ссылку:<br/><br/><pre>&lt;data android:path=&quot;/sample&quot; /&gt;<br/></pre><br/><br/>Используйте <code>pathSuffix</code>, если нужно указать только окончание URL:<br/><br/><pre>&lt;data android:pathSuffix=&quot;ample&quot; /&gt;<br/></pre><br/><br/>Если вы только настраиваете диплинки в ваше приложение, то не забудьте подготовить и загрузить на ваш сайт файл <code>assetlinks.json</code>. Как он выглядит и создается рассказано в этой <a href=\"https://habr.com/ru/articles/837330/\" target=\"_blank\" rel=\"noopener\" onclick=\"return confirm('Open this link?\\n\\n'+this.href);\">статье</a>, которую мы переводили для вас.<br/><br/>Давайте сделаем то же самое и для iOS. Откроем или создадим файл <code>apple-app-site-association</code>. Тут нас интересует массив <code>components</code> внутри объекта <code>details</code>. Существует несколько вариантов реализации:<br/><br/>Если нужно сделать переход именно на эту страницу:<br/><pre>{<br/>  “/”: “/sample”,<br/>  “comment”: “Откроет только https://example.com/sample”<br/>}<br/></pre><br/><br/>Если можно позволить переход на любого потомка этой страницы:<br/><pre>{<br/>  “/”: “/sample/*”,<br/>  “comment”: “Откроет также https://example.com/sample/first”<br/>}<br/></pre><br/><br/>И если в пути содержится часть, но мы не знаем ее точного места:<br/><pre>{<br/>  “#”: “ample”,<br/>  “comment”: “Откроет также https://example.com/mySample”<br/>}<br/></pre><br/><br/>После этого нужно загрузить этот файл на сервер и подождать, пока AASA-Bot заберет его на CDN компании Apple. Обычно это занимает до суток.",
-    "mediaType": "photo",
-    "media": "/telegram/photos/tg_86_0.jpg"
-  },
-  {
     "id": 85,
     "date": 1765917363,
     "dateFormatted": "2025-12-16T20:36:03.000Z",
     "text": "#ru #flutter #android  Android AppLinks  https://play.google.com/console/about/ https://developer.android.com/training/app-links/verify-android-applinks  https://www.wildberries.ru/.well-known/assetlinks.json  Google Play Console переподписывает приложения…",
     "mediaType": null,
     "media": null
-  },
-  {
-    "id": 79,
-    "date": 1765612350,
-    "dateFormatted": "2025-12-13T07:52:30.000Z",
-    "text": "<img src=\"/telegram/photos/tg_79_0.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/tg_79_1.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/tg_79_2.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/tg_79_3.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/tg_79_4.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/tg_79_5.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/><div class=\"tgme_widget_message_text js-message_text\" dir=\"auto\"><b>Бро, ты справишься с годовыми отчётами и тд</b><br/><br/>Если будешь заботиться о себе в самый горящий период года. Мы собрали для тебя несколько простых техник, которые помогут собраться с силами и возобновить ресурс. <br/><br/>Попробуй сделать их прямо на рабочем месте и поделись постом с друзьями, чтобы они тоже словили дзен в декабрьской суете.<br/><br/><a href=\"?q=%23%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%8B\">#советы@careeratMars</a>",
-    "mediaType": "photo",
-    "media": "/telegram/photos/tg_79_0.jpg"
   },
   {
     "id": 78,
@@ -232,42 +152,10 @@
     "media": null
   },
   {
-    "id": 70,
-    "date": 1764096661,
-    "dateFormatted": "2025-11-25T18:51:01.000Z",
-    "text": "<img src=\"/telegram/photos/photo_37@25-11-2025_21-59-55.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_38@25-11-2025_21-59-55.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_39@25-11-2025_21-59-55.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_40@25-11-2025_21-59-55.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/><a href=\"https://github.com/equescodebelike/external-component-android\">https://github.com/equescodebelike/external-component-android</a><br><br>Реализация и полная версия статьи<br><br>Это перестало быть шуткой...",
-    "mediaType": "photo",
-    "media": "/telegram/photos/photo_37@25-11-2025_21-59-55.jpg"
-  },
-  {
-    "id": 62,
-    "date": 1761834690,
-    "dateFormatted": "2025-10-30T14:31:30.000Z",
-    "text": "<img src=\"/telegram/photos/photo_29@30-10-2025_17-31-30.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_30@30-10-2025_17-31-30.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_31@30-10-2025_17-31-31.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_32@30-10-2025_17-31-31.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_33@30-10-2025_17-31-31.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_34@30-10-2025_17-31-31.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_35@30-10-2025_17-31-31.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_36@30-10-2025_17-31-31.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/><strong>SEO в эпоху GEO: какие технические факторы критичны в 2025 году</strong><br><br>Технические факторы ранжирования выглядят постоянными и фундаментальными. Если здесь что-то и меняется, то только вместе с глобальными изменениями в SEO и маркетинге.<br><br><blockquote>Но именно поэтому в 2025 году, когда нейроответы забирают трафик у традиционного поиска, стоит проверить, что у вас с техническими параметрами на сайтах. Как минимум, подтянуть то, что действительно важно, и выдохнуть там, где влияние на ранжирование минимально.</blockquote><br><br>Подготовили параметры, на которые ориентируются Яндекс и Google, отметили, как они влияют на попадание контента в нейроответы поисковых систем — ответ Алисы в Яндексе и в ИИ-обзор от Google. А также в ответы нейросетей: чат-ботов Chat GPT, DeepSeek, GigaChat и других.",
-    "mediaType": "photo",
-    "media": "/telegram/photos/photo_29@30-10-2025_17-31-30.jpg"
-  },
-  {
-    "id": 61,
-    "date": 1761726402,
-    "dateFormatted": "2025-10-29T08:26:42.000Z",
-    "text": "<a href = \"stickers/sticker (4).webp\">🤩</a>FITTIN на <a href=\"https://nrf.upgrade.st/\">NEW Retail Forum </a><br><br>Когда: 29-30 октября <br>Где: Проспет Вернадского ,41 <br><br><br>В 15:30 выступим с темой «<strong>Flutter Mobile First. Единая платформа для будущего.</strong>»<br><br>Обсудим с коллегами как и на чем лучше создавать ваши e-com платформы , на что это влияет и что ждет в ближайшем  будущем)",
-    "mediaType": null,
-    "media": null
-  },
-  {
     "id": 60,
     "date": 1761650359,
     "dateFormatted": "2025-10-28T11:19:19.000Z",
     "text": "Полезный пост. Позже напишу про опыт использования rfw и DivKit во Flutter. Раскатали даже на прод в виде игры",
-    "mediaType": null,
-    "media": null
-  },
-  {
-    "id": 59,
-    "date": 1761650273,
-    "dateFormatted": "2025-10-28T11:17:53.000Z",
-    "text": "<strong>Зачем нужен BDUI?</strong><br><br><strong>Дисклеймер. Стилистически не люблю BDUI за его dev exp, но вкратце обсудим его</strong> <strong>корни в посте</strong>. <br><br>Вижу многие заблуждения среди разрабов, блогеров и тп. К счастью или к сожалению, это текущая наша реальность. Никто на прямые вопросы &quot;Как развиваться мобильщику не смотря на текущие тренды с BDUI и АИ?&quot; кроме критики ничего не дают.<br><br>Давайте посмотрим как пришел BDUI на рынок и почему такая истерия:<br>1) Эту тему поднимали еще лет 10 назад, тогда были доклады и всякие статьи как люди пишут свой генератор экранчиков. Тогда такое использовали только в некоторых экранах.<br>2) год 2022. Те самые события. Удаления из сторов апок многих бигтехов. Как придумать план антикризиса? Вот он и был придуман. Который помогает обходить обновления экранов с бэкенда.<br>3) Просто поставьте себя на место манагера. Раскатка и обновления нативного кода до пользователя может доходить вместе 2 МЕСЯЦА. Когда же с BDUI — секунды, поменяв конфиг на бэке.<br><br>Еще раз. Запуск нативной фичи до юзера — 2 месяца. С BDUI — сегодня.<br><br>4) С разработанной инфрой один разраб может закатывать фичи сразу на 3-4 платформы. Я так делал и запускал соло фичи.<br><br>Минусы BDUI:<br>- очень дорого.<br>- не сделаешь сложные приложения с видео и частыми обновлениями экрана<br>- сложный порог входа. много незадокументированно. Не описано.<br>- часто много багов.<br><br>Но для манагеров это все чаще ок.<br><br>Какие приложения юзают BDUI:<br>- Авито. Когда я там был нативного кода я писал дай бог 5-10 реквестов в год. В 90% задачах это были огромные конфиги JSON&apos;а<br>- ОЗОН. Слышал на их конфе, что у них сейчас только BDUI разрабы<br>- Яндекс Маркет. Там 100% инженеров пишут свой код только на BDUI<br>- X5. Пока инфы мало, говорят активно пилят свой фреймворк<br><br>Лично я ругаю многие BDUI технологии не потому, что мне удобен натив (iOS я правда всем сердцем люблю). А потому, что сам BDUI плохо готовят и мало кто из авторов и разрабов платформы задумывается о тех, кто юзает их технологию. Чаще это promotion driven development, где разрабы думают только о своих целях и метриках, но никто об удобстве. Но я рационально понимаю почему бизнес это хочет. И почему это надо.<br><br>Сейчас у нас <a href=\"https://t.me/iosmakesmehate/3492\">тренировки по систем дизайну</a> и мы как раз решили познакомиться ближе с этим монстром. Настолько, что сами его запроектируем и изучим изнутри.",
     "mediaType": null,
     "media": null
   },
@@ -286,14 +174,6 @@
     "text": "<strong>Another revolution, Johny</strong>!<br><br><a href=\"https://www.swift.org/install/windows/\">https://www.swift.org/install/windows/</a><br><br>Теперь ожидаем Swift Multi Platform и порт XCode под винду<br><br>Напрягаемся",
     "mediaType": null,
     "media": null
-  },
-  {
-    "id": 53,
-    "date": 1761053975,
-    "dateFormatted": "2025-10-21T13:39:35.000Z",
-    "text": "<img src=\"/telegram/photos/photo_26@21-10-2025_16-39-35.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_27@21-10-2025_16-39-35.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/><a href = \"stickers/sticker.webp\">🤩</a>Сегодня и завтра ждем всех на <a href=\"https://nrf.upgrade.st/program\">New Retail Forum!</a> <br><br>У FITTIN 2 стенда  и 2 выступления<a href = \"stickers/sticker (1).webp\">🧭</a><a href = \"stickers/sticker (2).webp\">🔥</a><br><br>Приходите общаться и разбирать ваш запрос<a href = \"stickers/sticker (3).webp\">📎</a>",
-    "mediaType": "photo",
-    "media": "/telegram/photos/photo_26@21-10-2025_16-39-35.jpg"
   },
   {
     "id": 52,
@@ -344,28 +224,12 @@
     "media": "/telegram/photos/photo_21@01-09-2025_22-37-05.jpg"
   },
   {
-    "id": 35,
-    "date": 1756654578,
-    "dateFormatted": "2025-08-31T15:36:18.000Z",
-    "text": "<img src=\"/telegram/photos/photo_16@31-08-2025_18-36-18.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_17@31-08-2025_18-36-18.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_18@31-08-2025_18-36-18.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_19@31-08-2025_18-36-18.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_20@31-08-2025_18-36-18.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/>Тезисно по митапу<br><br>(Первый слайд про iOS &amp; android)",
-    "mediaType": "photo",
-    "media": "/telegram/photos/photo_16@31-08-2025_18-36-18.jpg"
-  },
-  {
     "id": 29,
     "date": 1756565080,
     "dateFormatted": "2025-08-30T14:44:40.000Z",
     "text": "<img src=\"/telegram/photos/photo_11@30-08-2025_17-44-40.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_12@30-08-2025_17-44-40.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_13@30-08-2025_17-44-41.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_14@30-08-2025_17-44-41.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><img src=\"/telegram/photos/photo_15@30-08-2025_17-44-41.jpg\" alt=\"\" class=\"mb-3 rounded-2xl border border-black/5 dark:border-white/10 max-w-full h-auto\" /><br/><strong>Я стал участником </strong><a href=\"https://events.yandex.ru/events/yandex-mobile-runtime-2025/index\">Yandex Mobile Runtime 25&apos;</a><br><br>Было невероятно интересно на день погрузиться в рабочую атмосферу со специалистами Яндекса, Авито и ВК. Познакомился с лидами команд 360, почты, Pro и маркета. Ребята все открытые, общительные. Необычно узнать, что некоторые практики и набитые шишки, все через них прошли. Но и подчерпнуть много нового, особенно по сбору метрик и перфомансу приложений<br><br>Хочу отметить организацию конференции. Кейтеринг, напитки, проведение хакатона и воркшопов. Все было на высочайшем уровне<br><br>Однозначно поеду и в следующем году. А пока буду потихоньку готовить посты, что узнал полезного и нового 👀<br><br>⭐️PeerLab на тему BDUI<br><br>⭐️PeerLab на тему &quot;ADR, System Design и глобальные рефакторинги&quot;<br><br>⭐️PeerLab на тему &quot;Метрики мобильных приложений&quot;",
     "mediaType": "photo",
     "media": "/telegram/photos/photo_11@30-08-2025_17-44-40.jpg"
-  },
-  {
-    "id": 28,
-    "date": 1756117997,
-    "dateFormatted": "2025-08-25T10:33:17.000Z",
-    "text": "<a href = \"video_files/sticker.webm\">💚</a><a href = \"video_files/sticker (1).webm\">💚</a><a href = \"video_files/sticker (2).webm\">💚</a><a href = \"video_files/sticker (3).webm\">💚</a><a href = \"video_files/sticker (4).webm\">💚</a><a href = \"video_files/sticker (5).webm\">💚</a><a href = \"video_files/sticker (6).webm\">💚</a><a href = \"video_files/sticker (7).webm\">💚</a><a href = \"video_files/sticker (8).webm\">💚</a><br><br>Наш корреспондент Екатерина Тюрина сообщает: <strong>ВСЯ СТРАНА СНОВА МОЖЕТ ПЛАТИТЬ АЙФОНОМ!  <br></strong><em><br></em><a href = \"video_files/sticker (9).webm\">➡️</a> Скачайте новое приложение <a href=\"https://sberbank.com/sms/active?utm_source=tg&amp;utm_medium=post&amp;utm_campaign=vzhuh_content=&amp;utm_term=smm\">АКТИВЫ ОНЛАЙН</a> в App Store<br><a href = \"video_files/sticker (9).webm\">➡️</a> В настройках разрешите ему доступ к Bluetooth<br><a href = \"video_files/sticker (9).webm\">➡️</a> Откройте приложение, <br>поднесите телефон к терминалу, подтвердите оплату — и <strong>ГОТОВО</strong><br><em><br></em><blockquote>🎉 Вингардиум… А, нет! Бесконтактный вжух!</blockquote><br><br>Следите<em> за </em>новостями!",
-    "mediaType": null,
-    "media": null
   },
   {
     "id": 27,
