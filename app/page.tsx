@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 px-4 py-8 font-sans text-neutral-900 dark:from-black dark:to-neutral-950 dark:text-neutral-50">
-      <main className="mx-auto flex w-full max-w-3xl flex-col gap-8">
+      <main className="mx-auto flex w-full max-w-3xl flex-col gap-0">
         <Header />
 
         {posts.length === 0 ? (

@@ -5,7 +5,7 @@
     node scripts/import-chat-export.js
 
   Требования:
-    - Папка экспорта Telegram: ChatExport_2025-11-30
+    - Папка экспорта Telegram: ChatExport
     - Внутри неё: messages.html и папка photos/ с изображениями
 
   Результат:
@@ -17,7 +17,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const EXPORT_DIR = path.join(process.cwd(), "ChatExport_2025-11-30");
+const EXPORT_DIR = path.join(process.cwd(), "ChatExport");
 const MESSAGES_HTML = path.join(EXPORT_DIR, "messages.html");
 const EXPORT_PHOTOS_DIR = path.join(EXPORT_DIR, "photos");
 const PUBLIC_PHOTOS_DIR = path.join(
