@@ -10,7 +10,7 @@ on:
     - cron: "0 * * * *" # раз в час
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -32,6 +32,32 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: node scripts/fetch-telegram.js
+      - name: Persist fetched posts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/posts.json public/telegram
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update posts from Telegram"
+            git push
+          fi
+      - name: Keep scheduled workflow active
+        run: |
+          KEEPALIVE_FILE=data/.keepalive
+          now=$(date -u +%s)
+          if [ -f "$KEEPALIVE_FILE" ]; then
+            last=$(date -u -d "$(cat "$KEEPALIVE_FILE")" +%s)
+          else
+            last=0
+          fi
+          if [ $(( (now - last) / 86400 )) -ge 30 ]; then
+            date -u +%Y-%m-%dT%H:%M:%SZ > "$KEEPALIVE_FILE"
+            git add "$KEEPALIVE_FILE"
+            git commit -m "chore: keepalive"
+            git push
+          fi
       - name: Build blog
         run: npm run build
       - name: Upload Pages artifact
