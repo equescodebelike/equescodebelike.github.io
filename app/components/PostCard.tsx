@@ -36,13 +36,6 @@ export function PostCard({ post }: PostCardProps) {
         />
       )}
 
-      {hasMedia && (
-        <div className="mt-3 rounded-lg border border-dashed border-neutral-300 px-3 py-2 text-xs text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
-          Медиа из Telegram:{" "}
-          <span className="font-semibold">{post.mediaType}</span>{" "}
-          <span className="break-all">({post.media})</span>
-        </div>
-      )}
     </article>
   );
 }
