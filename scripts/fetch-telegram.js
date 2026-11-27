@@ -14,6 +14,8 @@
       чаще, чем раз в сутки.
     - Скачанные фото складываются в public/telegram/photos и должны
       коммититься в репозиторий вместе с data/posts.json.
+    - Альбомы (media_group_id) приходят как несколько отдельных сообщений,
+      поэтому они склеиваются в один пост по media_group_id.
 */
 
 const fs = require("fs");
@@ -275,38 +277,77 @@ function pickMedia(message) {
   return null;
 }
 
-async function mapMessageToPost(message) {
-  const rawText = message.text || message.caption || "";
-  const entities = message.entities || message.caption_entities || [];
+function groupMessages(messages) {
+  // Альбом в Bot API — это несколько сообщений с одинаковым media_group_id.
+  // Склеиваем их в один логический пост, сохраняя порядок по message_id.
+  const sorted = [...messages].sort((a, b) => a.message_id - b.message_id);
+  const groups = [];
+  const albums = new Map();
+
+  for (const message of sorted) {
+    if (!message.media_group_id) {
+      groups.push([message]);
+      continue;
+    }
+
+    const key = String(message.media_group_id);
+    let album = albums.get(key);
+
+    if (!album) {
+      album = [];
+      albums.set(key, album);
+      groups.push(album);
+    }
+
+    album.push(message);
+  }
+
+  return groups;
+}
+
+async function mapGroupToPost(messages) {
+  // Внутри медиа-группы сообщения идут по возрастанию message_id,
+  // подпись обычно прикреплена только к одному из них.
+  const ordered = [...messages].sort((a, b) => a.message_id - b.message_id);
+  const primary =
+    ordered.find((message) => message.text || message.caption) || ordered[0];
+
+  const rawText = primary.text || primary.caption || "";
+  const entities = primary.entities || primary.caption_entities || [];
   const textHtml = buildTextHtml(rawText, entities);
 
-  const picked = pickMedia(message);
-  let mediaType = null;
-  let mediaPath = null;
-  const imagePaths = [];
+  const downloads = [];
 
-  if (picked) {
-    mediaType = picked.type;
-    const destBase = path.join(
-      PHOTOS_DIR,
-      `tg_${message.message_id}`,
-    );
+  for (const message of ordered) {
+    // Видео, опросы и репосты внутри альбома не сохраняем,
+    // но подпись с такого сообщения берём (она учтена выше).
+    if (getSkipReason(message)) continue;
+
+    const picked = pickMedia(message);
+    if (!picked) continue;
+
+    const destBase = path.join(PHOTOS_DIR, `tg_${message.message_id}`);
     const downloaded = await downloadFile(picked.item.file_id, destBase);
     if (downloaded) {
-      mediaPath = downloaded;
-      if (mediaType === "photo") {
-        imagePaths.push(downloaded);
-      }
+      downloads.push({ type: picked.type, path: downloaded });
     }
   }
 
+  const imagePaths = downloads
+    .filter((item) => item.type === "photo")
+    .map((item) => item.path);
+  const media = imagePaths[0] || downloads[0]?.path || null;
+  const mediaType = imagePaths.length
+    ? "photo"
+    : downloads[0]?.type || null;
+
   return {
-    id: message.message_id,
-    date: message.date,
-    dateFormatted: new Date(message.date * 1000).toISOString(),
+    id: ordered[0].message_id,
+    date: ordered[0].date,
+    dateFormatted: new Date(ordered[0].date * 1000).toISOString(),
     text: `${buildImageHtml(imagePaths)}${textHtml}`,
     mediaType,
-    media: mediaPath,
+    media,
   };
 }
 
@@ -340,8 +381,9 @@ async function main() {
   console.log("Fetching Telegram channel posts...");
   const updates = await fetchUpdates();
 
-  const channelMessages = [];
-  const skipped = { repost: 0, poll: 0, video: 0 };
+  // Один пост может прийти несколькими апдейтами (альбом), поэтому сначала
+  // собираем актуальные сообщения по message_id, а потом склеиваем их в группы.
+  const messagesById = new Map();
 
   for (const update of updates) {
     const message =
@@ -358,24 +400,45 @@ async function main() {
       continue;
     }
 
-    const skipReason = getSkipReason(message);
-    if (skipReason) {
-      skipped[skipReason] += 1;
+    // Если пришла отредактированная версия, она должна заменить исходную.
+    messagesById.set(message.message_id, message);
+  }
+
+  const groups = groupMessages(Array.from(messagesById.values()));
+
+  const skipped = { repost: 0, poll: 0, video: 0, empty: 0 };
+  const prepared = [];
+
+  for (const group of groups) {
+    const usable = group.filter((message) => !getSkipReason(message));
+
+    if (usable.length === 0) {
+      const reason = group.map(getSkipReason).find(Boolean);
+      if (reason) skipped[reason] += 1;
       continue;
     }
 
-    channelMessages.push(message);
+    const post = await mapGroupToPost(group);
+
+    // Сообщения без текста и без поддерживаемого медиа (стикеры, голосовые
+    // и т.п.) не превращаем в пустые карточки.
+    if (!post.text && !post.media) {
+      skipped.empty += 1;
+      continue;
+    }
+
+    prepared.push({
+      post,
+      messageIds: group.map((message) => message.message_id),
+    });
   }
 
-  console.log(`Matched ${channelMessages.length} channel post(s)`);
   console.log(
-    `Skipped: ${skipped.repost} repost(s), ${skipped.poll} poll(s), ${skipped.video} video post(s)`,
+    `Matched ${messagesById.size} channel message(s) in ${groups.length} group(s)`,
   );
-
-  const mapped = [];
-  for (const message of channelMessages) {
-    mapped.push(await mapMessageToPost(message));
-  }
+  console.log(
+    `Skipped: ${skipped.repost} repost(s), ${skipped.poll} poll(s), ${skipped.video} video post(s), ${skipped.empty} empty post(s)`,
+  );
 
   // Мёрджим с уже существующими постами, чтобы не терять историю
   const existing = readExistingPosts();
@@ -388,7 +451,12 @@ async function main() {
   }
 
   let added = 0;
-  for (const post of mapped) {
+  for (const { post, messageIds } of prepared) {
+    // Убираем «осколки» альбома, которые раньше сохранились отдельными постами.
+    for (const id of messageIds) {
+      if (id !== post.id) byId.delete(id);
+    }
+
     if (!byId.has(post.id)) added += 1;
     byId.set(post.id, post);
   }
